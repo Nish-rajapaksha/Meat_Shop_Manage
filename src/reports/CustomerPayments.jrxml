@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CustomerPayments" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19ead727-e96e-48a9-91f9-3f561e8e003b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="CustomerOrId" class="java.lang.String"/>
+	<parameter name="CusPaymentId" class="java.lang.String"/>
+	<parameter name="CusPayDate" class="java.lang.String"/>
+	<parameter name="CusPayType" class="java.lang.String"/>
+	<parameter name="CusPayAmount" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="10" width="250" height="60" uuid="c5479420-f778-4c80-9eba-27b2f5b2bd8b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Yu Gothic UI Semibold" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Payment Receipt]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="1" y="6" width="89" height="14" uuid="26abaa4e-3889-49f5-b1ac-d38b5035d360"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="0" y="30" width="100" height="30" uuid="5981abba-6a43-4a85-b651-94b0ee3ac1fc"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="4" width="402" height="30" uuid="7d750e05-ea5c-4684-9bc9-aeae92dd5534"/>
+				<textElement>
+					<font fontName="Franklin Gothic Heavy" size="12"/>
+				</textElement>
+				<text><![CDATA[Thank you for your Purchasing with us !]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="275" splitType="Stretch">
+			<staticText>
+				<reportElement x="210" y="10" width="100" height="30" uuid="3eff56b3-41b1-4e8d-b676-694fe403f29d"/>
+				<textElement>
+					<font size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Payments Details]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="60" width="100" height="30" uuid="27314fd4-9c84-4488-80e0-e47a014dc14a"/>
+				<textFieldExpression><![CDATA[$P{CustomerOrId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="100" width="100" height="30" uuid="43ff00d9-1e1f-4108-887b-9d16f6810796">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{CusPaymentId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="140" width="100" height="30" uuid="e538c50f-44cb-4fc1-b6f2-b70005742e0d"/>
+				<textFieldExpression><![CDATA[$P{CusPayDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="190" width="100" height="30" uuid="79eb5751-2f03-4f39-8166-3502456a79f0"/>
+				<textFieldExpression><![CDATA[$P{CusPayType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="240" width="100" height="30" uuid="0a316ef9-0bb9-414e-862e-9266f711e818"/>
+				<textFieldExpression><![CDATA[$P{CusPayAmount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="60" width="100" height="30" uuid="aa282d62-ef99-4743-b3b2-d22034bff6d7"/>
+				<text><![CDATA[Customer Order Id :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="100" width="100" height="30" uuid="a0bc4899-c5da-402b-8cde-08acc53e8830"/>
+				<text><![CDATA[Payment Id :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="140" width="100" height="30" uuid="f17d9d37-7e19-42f1-b7aa-671b26f18a8f"/>
+				<text><![CDATA[Payment Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="190" width="100" height="30" uuid="275ef6ed-5ba0-4f5c-bbae-f1fe51c61695"/>
+				<text><![CDATA[Payment Type :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="240" width="100" height="30" uuid="a040c4a3-eb38-4eab-b066-05b6272c0c7e"/>
+				<text><![CDATA[Payment Amount :]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="260" y="10" width="260" height="30" uuid="07ca6ac2-00d2-493e-b7bf-bc83233e3b6f"/>
+				<text><![CDATA[Please Keep this with You for the Safety...]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="48" width="100" height="30" uuid="7d59a03f-f3a9-4503-8491-c010fc72a3c2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Algerian" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SN MEATS]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

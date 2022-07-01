@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CustomerCartPrint1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="49a77350-f479-4fbe-891f-61e10708ef46">
+	<parameter name="TotalCost" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="meatCartId" class="java.lang.String"/>
+	<field name="cartType" class="java.lang.String"/>
+	<field name="cartUnitPrice" class="java.lang.Double"/>
+	<field name="cartQty" class="java.lang.Integer"/>
+	<field name="cartTotalcost" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="20" width="240" height="40" uuid="21f4ec4b-568f-44d5-b82d-839c07329f45"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Order Details]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="450" y="5" width="100" height="30" uuid="38a2d44c-9d70-4184-ae9e-79ce480eb28d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="460" y="35" width="100" height="30" uuid="b5c1e0f3-b894-4dde-9a24-6a9d7a0cc85a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="38" splitType="Stretch">
+			<line>
+				<reportElement x="-60" y="0" width="635" height="1" uuid="6fe7f13d-8dea-42ce-9f44-cc98bac058c3"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="31" width="100" height="30" uuid="da72ba92-71b8-40bc-b152-5f28be3905ad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e55d812-9b4c-4bd0-b1b5-8836ec8f2d56"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Meat ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="31" width="100" height="30" uuid="830bcd2f-59b3-4dbb-b0ba-161bbfc5d73b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="80d9fc49-3bb7-409d-9e43-bc6c38b3e7f6"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="30" width="100" height="30" uuid="79f7e62a-e4a1-4e20-b588-e472f4b70e16">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7181d7c4-73e1-460c-805e-41f7c78321d3"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Unit Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="31" width="100" height="30" uuid="0beeed6d-dd20-42ea-9203-36de5228e0fb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0bc5cac7-8eda-42b4-add0-0afbe335b2d0"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="31" width="100" height="30" uuid="047c5655-6204-47de-bc83-ffd6ca4c6091">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1af7329-508c-43ca-b073-074095502286"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total Cost]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="20" width="100" height="30" uuid="e466bdeb-028f-4e9c-afc1-9d8368b97578">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e55d812-9b4c-4bd0-b1b5-8836ec8f2d56"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{meatCartId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="20" width="100" height="30" uuid="ff15122d-f11e-4bb9-9e7c-8c3c6714914a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="80d9fc49-3bb7-409d-9e43-bc6c38b3e7f6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cartType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="20" width="100" height="30" uuid="62e57cfc-00e4-4fc2-90c0-7cefc3ba60b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7181d7c4-73e1-460c-805e-41f7c78321d3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cartUnitPrice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="20" width="100" height="30" uuid="371b5f6f-c57e-4b9e-a121-b5efe478c76a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0bc5cac7-8eda-42b4-add0-0afbe335b2d0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cartQty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="20" width="100" height="30" uuid="9939cac7-14eb-4d01-a5de-6944416e3752">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1af7329-508c-43ca-b073-074095502286"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cartTotalcost}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="109" splitType="Stretch">
+			<textField>
+				<reportElement x="460" y="20" width="100" height="30" uuid="84c96a66-2640-42fd-9355-cf6612e722c1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TotalCost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="20" width="100" height="30" uuid="4e291a10-b184-4b9c-9b73-e95b168a876f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total Cost =]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="70" width="160" height="30" uuid="ab9ccb59-ca2d-40d2-8238-7a0f41bbf071"/>
+				<textElement>
+					<font fontName="Algerian" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SN MEATS]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

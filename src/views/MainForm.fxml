@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MainContext" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <ImageView fitHeight="708.0" fitWidth="908.0" layoutX="-2.0" layoutY="-2.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assests/modern-black-friday-background-with-brush-stroke-frame.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="198.0" fitWidth="220.0" layoutX="337.0" layoutY="216.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assests/shopping-bag-butcher-illustration-character-vector_193274-26390.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="295.0" layoutY="201.0" prefHeight="59.0" prefWidth="185.0" text="SN MEATS" textFill="#c60d0d">
+         <font>
+            <Font name="ROGFonts-Regular" size="24.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="392.0" layoutY="449.0" onAction="#LoginOnAction" prefHeight="41.0" prefWidth="110.0" style="-fx-background-color: #FF6666;" text="Login" textFill="#1e1c1c">
+         <font>
+            <Font name="Perpetua Bold" size="21.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#d30808" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
+   </children>
+</AnchorPane>

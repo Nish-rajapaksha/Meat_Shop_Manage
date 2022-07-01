@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="CusOrderContext" prefHeight="681.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CusOrderFormController">
+   <children>
+      <AnchorPane prefHeight="814.0" prefWidth="878.0">
+         <children>
+            <ImageView blendMode="MULTIPLY" fitHeight="163.0" fitWidth="174.0" layoutX="707.0" layoutY="-14.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assests/shopping-bag-butcher-illustration-character-vector_193274-26390.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="14.0" text="Let's Make a Customer's Order">
+               <font>
+                  <Font name="Californian FB Bold" size="22.0" />
+               </font>
+            </Label>
+            <Separator layoutX="-6.0" layoutY="51.0" prefHeight="1.0" prefWidth="708.0" style="-fx-background-color: #03203C;" />
+            <JFXButton buttonType="RAISED" layoutX="768.0" layoutY="768.0" onAction="#btnHomeOnAction" prefHeight="46.0" prefWidth="119.0" style="-fx-background-color: #e84833;" text="Home" />
+            <Label layoutX="409.0" layoutY="4.0" prefHeight="21.0" prefWidth="56.0" text="Date :" />
+            <Label fx:id="lblDateCus" layoutX="478.0" layoutY="5.0" prefHeight="31.0" prefWidth="131.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="772.0" layoutY="778.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assests/outline_home_black_24dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="130.0" prefHeight="590.0" prefWidth="869.0" style="-fx-background-color: #baaba9;">
+         <children>
+            <Label layoutX="372.0" layoutY="28.0" text="Customer Name :" />
+            <Label layoutX="14.0" layoutY="28.0" text="Customer ID :" />
+            <TextField fx:id="txtCustName" layoutX="510.0" layoutY="23.0" />
+            <Label layoutX="14.0" layoutY="79.0" text="Customer order id :" />
+            <TextField fx:id="txtCusOrId" layoutX="160.0" layoutY="74.0" />
+            <Label layoutX="372.0" layoutY="79.0" text="Meat Item Id :" />
+            <Label layoutX="14.0" layoutY="129.0" prefHeight="21.0" prefWidth="131.0" text="Meat Type :" />
+            <ComboBox fx:id="cmbCustomerId" layoutX="160.0" layoutY="23.0" prefHeight="31.0" prefWidth="187.0" />
+            <TextField fx:id="txtMeatType" layoutX="157.0" layoutY="124.0" />
+            <Label layoutX="372.0" layoutY="129.0" prefHeight="21.0" prefWidth="131.0" text="Unit Price:" />
+            <TextField fx:id="txtUnitPrice" layoutX="510.0" layoutY="124.0" />
+            <Label layoutX="372.0" layoutY="181.0" prefHeight="21.0" prefWidth="131.0" text="Qty :" />
+            <TextField fx:id="txtQtyOnHand" layoutX="157.0" layoutY="176.0" />
+            <Label layoutX="14.0" layoutY="181.0" prefHeight="21.0" prefWidth="131.0" text="Qty On Hand :" />
+            <TextField fx:id="txtCusQty" layoutX="510.0" layoutY="176.0" />
+            <AnchorPane layoutX="705.0" layoutY="503.0" prefHeight="73.0" prefWidth="150.0" style="-fx-background-color: #A77B06;">
+               <children>
+                  <JFXButton layoutX="16.0" layoutY="17.0" onAction="#btnCusPlaceOrderOnAction" prefHeight="39.0" prefWidth="119.0" style="-fx-background-color: #ed8179;" text="Place Order" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tblCustomerCart" layoutY="384.0" prefHeight="224.0" prefWidth="670.0">
+               <columns>
+                  <TableColumn fx:id="colMeatItemId" prefWidth="141.0" text="Meat Item Id " />
+                  <TableColumn fx:id="colcType" prefWidth="116.0" text="Type" />
+                  <TableColumn fx:id="colCUnitPrice" prefWidth="95.0" text="Unit Price" />
+                  <TableColumn fx:id="colQty" prefWidth="87.0" text="Qty" />
+                  <TableColumn fx:id="colTotalCost" prefWidth="110.0" text="Total Cost" />
+                  <TableColumn fx:id="colRemove" prefWidth="117.0" text="Remove" />
+               </columns>
+            </TableView>
+            <Label layoutX="218.0" layoutY="294.0" prefHeight="21.0" prefWidth="93.0" text="Total :">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="303.0" layoutY="267.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #fafafa; -fx-border-color: #050505;">
+               <children>
+                  <Label fx:id="lblCusTotal" layoutX="31.0" layoutY="33.0" prefHeight="35.0" prefWidth="138.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button layoutX="670.0" layoutY="236.0" mnemonicParsing="false" onAction="#addToCartOnAction" prefHeight="46.0" prefWidth="187.0" style="-fx-background-color: #ed8179; -fx-border-color: #050505;" text="Add to Cart">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="cmbMeatItem" layoutX="510.0" layoutY="74.0" prefHeight="31.0" prefWidth="187.0" />
+            <Label layoutX="705.0" layoutY="124.0" prefHeight="31.0" prefWidth="82.0" style="-fx-border-color: #03203C;" text="=/100*20 ">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="729.0" layoutY="443.0" onAction="#btnPlaceOrderPrintOnActionCus" prefHeight="53.0" prefWidth="128.0" style="-fx-background-color: #ed8179;" text="Print" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
